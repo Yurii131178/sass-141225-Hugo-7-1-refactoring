@@ -1,11 +1,14 @@
-// $color-primary-text: #888; // kebeb case
-// $color-blue-text: lightblue; // kebeb case
+/*my code*/
+//______________________________________
 
-// $colorPrimaryText: #888; // camel case
-// $colorBlueText: lightblue; // camel case
+// $color-primary-text: #888; // kebab-case ✅ (РЕКОМЕНДОВАНО)
+// $color-blue-text: lightblue; // kebab-case ✅ (РЕКОМЕНДОВАНО)
 
-// $color_primary_text: #888; // snake case
-// $color_blue_text: lightblue; // snake case
+// $color_primary_text: #888; // snake_case ⚠️ (рідко)
+// $color_blue_text: lightblue; // snake_case ⚠️ (рідко)
+
+// $colorPrimaryText: #888; // camelCase ❌ (НЕ рекомендується)
+// $colorBlueText: lightblue; // camelCase ❌ (НЕ рекомендується)
 
 $font-size: 16px;
 
