@@ -7,15 +7,28 @@
 //   }
 // }
 
+
+// .link {
+//   color: black;
+
+//   &:hover,
+// &:focus {
+//   color: rgb(78, 23, 207);
+// }
+// }
+
+
+
 .button {
   background: teal {
     position: center;
     repeat: no-repeat;
+    
   }
 
-  // color: red;
+  color: red;
 
-  &:hover,
+  &:hover, 
   &:focus {
     color: blue;
   }
