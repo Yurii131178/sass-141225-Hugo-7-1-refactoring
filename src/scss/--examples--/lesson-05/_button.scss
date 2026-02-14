@@ -1,7 +1,14 @@
 /*my code*/
-@use "sass:math";
+@use "sass:math"; // вбудований модуль з простору sass, за його допомогою можемо імпортувати змінну, н-д число 'Пі'
+//---------------------//
+//- заімпортуємо модуль "btn-scema" в наш код за допомогою директиви "use": будемо підставляти набір змінних.
+
+// скоротимо namespace до "vars"
+
+// При імпорті модуля маємо звертатись до його namespace!!! (vars)
+
 @use "btn-scema" as vars with (
-  $font-size: 30px,
+  $font-size: 50px,
   $btn-color: black,
   $btn-bgcolor: rgb(163, 175, 226)
 );
@@ -12,4 +19,4 @@
   background-color: vars.$btn-bgcolor;
 }
 
-@debug math.$pi;
+@debug math.$pi; // @debug - звертаємось до namespace 'math' і змінна 'Пі'

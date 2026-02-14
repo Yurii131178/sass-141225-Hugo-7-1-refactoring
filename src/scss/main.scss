@@ -3,9 +3,12 @@
 // @use "layouts";
 // @use "components";
 
-// @use "--examples--/lesson-05/variables";
+// закоментуємо попередні приклади і будемо працювати з уроками-прикладами
 
-@use "--examples--/lesson-05/button";
+@use "--examples--/lesson-05/variables";
 
-/* ==END== */
+@use "--examples--/lesson-05/scopes";
+// @use "--examples--/lesson-05/button";
+
+// /* ==END== */
 @use "--examples--/lesson-05/base";
