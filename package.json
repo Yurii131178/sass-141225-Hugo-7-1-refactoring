@@ -9,9 +9,17 @@
     "preview": "vite preview",
     "watch": "npx vite build --watch"
   },
+  
   "browserslist": [
     "cover 99.5%"
   ],
+  
+
+
+
+
+
+
   "devDependencies": {
     "autoprefixer": "^10.4.4",
     "fast-glob": "^3.3.1",
