@@ -3,9 +3,10 @@
   |============================
 */
 .box {
-  width: 600px + 20px;
+  // width: 600px + 30%; // несумісні типи
+
   
-  width: calc(600p - 50%);
+  width: calc(600px - 50%);
 }
 /*|============================
   | Множення & Ділення
@@ -38,6 +39,29 @@ $margin: 100px;
 
 .box {
   margin: $margin * 2;
-  margin: calc(#{$margin} * 2 )
+  margin: calc(#{$margin} * 2 );
+  margin: calc(#{$margin} / 2);
   
 }
+
+/*|============================
+  | Examples
+  |============================
+*/
+
+.#{$name} {
+  margin: $margin;
+
+}
+// під час компіляції отримаємо (див. index.css), тобто символ інтерполяції # дістав зі змінної $name рядок box, і підставиви його замість даної змінної
+
+//======================LMS= Інтерполяція=====================//
+
+
+
+@each $animal in dog, cat, bird, turtle, dolphin, ape, fox {
+  .#{$animal}-icon {
+    background-image: url("../images/#{$animal}.png");
+  }
+}
+

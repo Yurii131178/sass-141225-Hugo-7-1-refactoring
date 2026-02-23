@@ -26,10 +26,46 @@ $status: (
   "completed": #a461d8,
   "ended": #fc5a5a,
   "active": #82c43c,
+  "jojoba": rgb(0, 82, 183)
 );
 
-@each $status-text, $color in $status {
-  .badge-#{$status-text} {
-    background-color: $color;
-  }
+@each $name, $color in $status {
+  .badge-#{$name} {
+  background-color: #{$color};
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @each $status-text, $color in $status {
+//   .badge-#{$status-text} {
+//     background-color: $color;
+//   }
+// }

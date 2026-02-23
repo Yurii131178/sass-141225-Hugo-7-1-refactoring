@@ -25,7 +25,13 @@
 
 // lesson 7 'math'
 
-@use "--examples--/lesson-07/math"
+@use "--examples--/lesson-07/math";
 
 
-//----------------//
+//------інтерполяція----------//
+
+@use "--examples--/lesson-07/task";
+@use "--examples--/lesson-07/badge";
+// @use "--examples--/lesson-07/example.css";
+
+
