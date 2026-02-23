@@ -7,6 +7,7 @@
 //   display: flex;
 //   align-items: center;
 //   gap: 20px;
+//   margin-bottom: 5px;
 
 //   width: 480px;
 //   padding: 20px;
@@ -36,7 +37,9 @@
 // .notification {
 //   display: flex;
 //   align-items: center;
+//   justify-content:space-evenly;
 //   gap: 20px;
+//   margin-bottom: 5px;
 
 //   width: 480px;
 //   padding: 20px;
@@ -54,19 +57,23 @@
 // .notification-primary {
 //   @extend .notification;
 
+ 
+
 //   background-color: #f07f2e;
 // }
 
 // .notification-success {
 //   @extend .notification;
+ 
 
 //   background-color: #82c43c;
 // }
 
 // .notification-info {
 //   @extend .notification;
+  
 
-//   background-color: #4e75ff;
+//   background-color: #2b00ff;
 // }
 
 // Approach 3
@@ -74,6 +81,8 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  justify-content:flex-start;
+  margin-bottom: 10px;
 
   width: 480px;
   padding: 20px;
@@ -95,13 +104,13 @@
 }
 
 .notification-success {
-  @extend %notification;
+ @extend %notification;
 
   background-color: #82c43c;
 }
 
 .notification-info {
-  @extend %notification;
+ @extend %notification;
 
   background-color: #4e75ff;
 }
