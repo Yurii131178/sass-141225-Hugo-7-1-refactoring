@@ -70,92 +70,19 @@
 
 //===============іменовані аргументи================//
 
-@mixin position(
-  $layer-index,
-  $display,
-  // обов'язковий параметр
-  $position-type: absolute,
-  // встановили значення абсолют за замовчуванням
-  $position-x: 50%,
-  // встановили позицію по горизонталі
-  $position-y: $position-x,
-  // встановили позицію по вертикалі
-  $offset-x: $position-x,
-  // встановили зміщення по горизонталі
-  $offset-y: $offset-x // встановили зміщення по вертикалі
-) {
-  position: $position-type;
-  top: $position-y;
-  left: $position-x;
-  transform: translate(($offset-x * -1), ($offset-y * -1));
-  z-index: $layer-index;
-  display: $display;
-}
-
-.decoration {
-  @include position(
-    $offset-y: 70%,
-    $layer-index: 90,
-    $display: block
-  ); // - вказуємо назву опційного параметра, який ми визначили всередині міксина ($offset-y) і передати значення (70%).
-}
-//====================================================//
-// @mixin frame-size($width, $height: $width) {
-//   width: $width;
-//   height: $height;
-// }
-
-// %size {
-//   width: 150px;
-//   height: 150px;
-// }
-
-// .avatar {
-//   @include frame-size(150px);
-//   @extend %size;
-
-//   border-radius: 50%;
-// }
-
-// .icon {
-//   @include frame-size(50px);
-//   @extend %size;
-
-//   border: 2px solid lightblue;
-// }
-
-// // Arguments
-// @mixin position-center {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
-
-// .decoration {
-//   @include position-center;
-// }
-
-// @mixin position($position-type, $position-x, $position-y, $offset-x, $offset-y) {
-//   position: $position-type;
-//   top: $position-y;
-//   left: $position-x;
-//   transform: translate($offset-x, $offset-y);
-// }
-
-// .decoration {
-//   @include position(absolute, 50%, 50%, -50%, -50%);
-// }
-
 // @mixin position(
 //   $layer-index,
 //   $display,
-//   // обовʼязковий параметр
+//   // обов'язковий параметр
 //   $position-type: absolute,
+//   // встановили значення абсолют за замовчуванням
 //   $position-x: 50%,
+//   // встановили позицію по горизонталі
 //   $position-y: $position-x,
+//   // встановили позицію по вертикалі
 //   $offset-x: $position-x,
-//   $offset-y: $position-x
+//   // встановили зміщення по горизонталі
+//   $offset-y: $offset-x // встановили зміщення по вертикалі
 // ) {
 //   position: $position-type;
 //   top: $position-y;
@@ -166,9 +93,14 @@
 // }
 
 // .decoration {
-//   @include position($offset-y: 70%, $layer-index: 100, $display: block);
+//   @include position(
+//     $offset-y: 70%,
+//     $layer-index: 90,
+//     $display: block
+//   ); // - вказуємо назву опційного параметра, який ми визначили всередині міксина ($offset-y) і передали значення (70%).
 // }
-
+//====================================================//
+//===============іменовані аргументи в циклі ================//
 // %btn {
 //   font-family: Montserrat;
 //   font-size: 14px;
@@ -176,15 +108,14 @@
 //   line-height: 20px; /* 142.857% */
 //   letter-spacing: 0.5px;
 //   color: #fafafb;
-
-//   background-color: #f07f2e;
+//   background-color: #00b734;
 //   border: none;
 //   cursor: pointer;
 //   transition: 300ms;
 
 //   &:hover,
 //   &:focus {
-//     background-color: #f15c27;
+//     background-color: hsl(16, 88%, 55%);
 //     box-shadow: 0px 4px 10px 0px rgba(240, 127, 46, 0.25);
 //   }
 // }
@@ -202,17 +133,13 @@
 //   }
 // }
 
-// @include btn-size(".btn-sm", ".btn-md", ".btn-lg", ".btn-xl");
+// @include btn-size('.btn-sm', '.btn-md', '.btn-lg', '.btn-xl');
 
-// @use "sass:meta";
+//==========================================//
+// ======= список іменованих аргументів ========== //
+// @use 'sass:meta';
 
-// @mixin btn-type($types...) {
-//   // $types: (
-//   //   $success: lightgreen,
-//   //   $error: tomato,
-//   //   $info: lightblue,
-//   // );
-
+// @mixin btn-types($types...) {
 //   @each $name, $color in meta.keywords($types) {
 //     .btn-#{$name} {
 //       border: 2px solid $color;
@@ -221,7 +148,27 @@
 //   }
 // }
 
-// @include btn-type($success: lightgreen, $error: tomato, $info: lightblue);
+// @include btn-types($success: lightgreen, $error: red, $info: lightblue);
+
+//==================================================//
+//================@content========================//
+@mixin hover($state) {
+  &:not([#{$state}]):hover {
+    @content;
+  }
+}
+
+.button {
+  background-color: white;
+  border: 1px solid darkblue;
+
+  @include hover($state: disabled) {
+    background-color: darkblue;
+    color: white;
+    border: 1px solid white;
+  }
+}
+//================================================//
 
 // @mixin hover($state) {
 //   &:not([#{$state}]):hover {
@@ -234,6 +181,26 @@
 //   border: 1px solid darkblue;
 
 //   @include hover($state: disabled) {
+//     color: white;
+//     background-color: darkblue;
+//   }
+// }
+
+//-------------------------------//
+
+// // At-rule @content
+// @mixin hover {
+//   &:not([disabled]):hover {
+//     @content;
+//   }
+// }
+
+// /* ===== Usage ===== */
+// .button {
+//   background-color: white;
+//   border: 1px solid darkblue;
+
+//   @include hover {
 //     color: white;
 //     background-color: darkblue;
 //   }
