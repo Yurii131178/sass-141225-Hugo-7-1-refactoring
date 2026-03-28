@@ -152,22 +152,22 @@
 
 //==================================================//
 //================@content========================//
-@mixin hover($state) {
-  &:not([#{$state}]):hover {
-    @content;
-  }
-}
+// @mixin hover($state) {
+//   &:not([#{$state}]):hover {
+//     @content;
+//   }
+// }
 
-.button {
-  background-color: white;
-  border: 1px solid darkblue;
+// .button {
+//   background-color: white;
+//   border: 1px solid darkblue;
 
-  @include hover($state: disabled) {
-    background-color: darkblue;
-    color: white;
-    border: 1px solid white;
-  }
-}
+//   @include hover($state: disabled) {
+//     background-color: darkblue;
+//     color: white;
+//     border: 1px solid white;
+//   }
+// }
 //================================================//
 
 // @mixin hover($state) {

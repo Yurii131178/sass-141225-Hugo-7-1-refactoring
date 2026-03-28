@@ -1,5 +1,5 @@
-@use "decimal" as *;
-@use "functions" as *;
+@use 'decimal' as *;
+@use 'functions' as *;
 
 @mixin fonts($fs, $fw: null, $lh: null, $ls: null, $align: null) {
   @if $fs {
