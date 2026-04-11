@@ -1,4 +1,6 @@
 // @each at-rule with list
+// ===========my code===============
+
 $sizes: 8, 16, 20;
 
 @each $size in $sizes {
@@ -7,12 +9,14 @@ $sizes: 8, 16, 20;
   }
 }
 
-// @each at-rule with map
+//======================
+// // @each at-rule with map
+
 $spacers: (
-  "sm": 24,
-  "md": 32,
-  "lg": 36,
-  "xl": 68,
+  'sm': 24,
+  'md': 32,
+  'lg': 36,
+  'xl': 68,
 );
 
 @each $key, $value in $spacers {
@@ -20,5 +24,3 @@ $spacers: (
     margin: #{$value}px;
   }
 }
-
-// next code
