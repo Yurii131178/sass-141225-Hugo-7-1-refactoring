@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/sass-141225/",
+    "build": "vite build --base=/sass-141225-Hugo-7-1-refactoring/",
     "preview": "vite preview",
     "watch": "npx vite build --watch"
   },
