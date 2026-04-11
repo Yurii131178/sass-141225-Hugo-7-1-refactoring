@@ -1,22 +1,22 @@
 // my code //
 //=============@if==============//
 
-@mixin avatar($size, $circle: false) {
-  width: $size;
-  height: $size;
+// @mixin avatar($size, $circle: false) {
+//   width: $size;
+//   height: $size;
 
-  @if $circle {
-    border-radius: 50%;
-  }
-}
+//   @if $circle {
+//     border-radius: 50%;
+//   }
+// }
 
-.square-avatar {
-  @include avatar(100px);
-}
+// .square-avatar {
+//   @include avatar(100px);
+// }
 
-.circle-avatar {
-  @include avatar(100px, $circle: true);
-}
+// .circle-avatar {
+//   @include avatar(100px, $circle: true);
+// }
 
 // ===========Conditional statements===============
 
